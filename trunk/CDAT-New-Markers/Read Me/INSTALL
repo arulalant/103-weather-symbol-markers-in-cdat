@@ -1,0 +1,41 @@
+Dear All,
+
+You need to do few steps to install these new weather markers inside your CDAT.
+
+It takes just less than 5 minutes to install this.
+
+Let us assume, you have CDAT source in your home folder and right now you are in this weather marker source folder. ok
+
+
+$ cp vcs_marker.h  ~/cdat-source/Packages/vcs/Include/
+
+$ cp VCS_validation_functions.py  ~/cdat-source/Packages/vcs/Lib/
+
+$ cp vcsmodule.c    ~/cdat-source/Packages/vcs/Src/
+
+$ cp markers.c      ~/cdat-source/Packages/vcs/Src/library/
+
+
+Now you are copied the new modified markers source and its dependencies files.
+
+
+$ cd ~/cdat-source/Packages/vcs/
+
+Now you can rebuild the vcs module by itself by running the following...
+
+$ rm -rf build
+$ /path/to/your_cdat_installed_location/python/bin/python setup.py build install
+
+example:
+
+In my system, I installed the cdat into the path in  /usr/local/cdat5.2/bin
+
+so that I can install by $ sudo /usr/local/cdat5.2/bin//cdat  setup.py build install
+
+
+Once you done this, you can call the 103 weather symbol markers in your cdat programs.
+
+Please read the Documentation and Example Markers - Programs.
+
+Thats all. :-)
+
